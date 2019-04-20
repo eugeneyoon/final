@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Learn Panduri</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- <script type="text/javascript" src="js/funstuff.js"></script> -->
+  </head>
+
+  <body class = "bgimage" aria-label="Photo by Aiony Haust on Unsplash, mountains in georgia">
+
+    <header>
+      <a class="skip" href="#main">Skip to main content</a><!-- retrieved from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ -->
+      <a class="banner" href="index.html">Learn Panduri</a>
+
+        <nav id="nav">
+            <a href = "index.html" class = current>About</a>
+
+            <div class="dropdownContainer1">
+              <a href="#" id="drop">I want a panduri</a>
+              <div id="dropdownStuff1">
+                <a href = "which.html">Which panduri</a>
+                <a href = "where.html">Getting a panduri</a>
+              </div>
+            </div>
+
+            <div class="dropdownContainer2">
+              <a href="#" id="drop">How to</a>
+              <div id="dropdownStuff2">
+                <a href = "hold.html">How to hold</a>
+                <a href = "tune.html">How to tune</a>
+                <a href = "strum.html">How to strum</a>
+              </div>
+            </div>
+
+            <div class="dropdownContainer3">
+              <a href="#" id="drop">Chords</a>
+              <div id="dropdownStuff3">
+                <a href = "chords.html">Introduction to chords</a>
+                <a href = "magnolia.html">Your first song</a>
+              </div>
+            </div>
+
+            <a href = "https://www.youtube.com/channel/UCxTann6rEOXPyrlaB7WZ4PA" target="_blank" aria-label="YouTube channel"><i class="fab fa-youtube"></i></a>
+
+            <div class="listContainer">
+              <input type="text" id="input" onkeyup="filtering()" placeholder="Search for a page!">
+              <ul id="list">
+                <li><a href = "index.html" class = current>About</a></li>
+                <li><a href = "which.html">Which panduri</a></li>
+                <li><a href = "where.html">Getting a panduri</a></li>
+                <li><a href = "hold.html">How to hold</a></li>
+                <li><a href = "tune.html">How to tune</a></li>
+                <li><a href = "strum.html">How to strum</a></li>
+                <li><a href = "chords.html">Introduction to chords</a></li>
+                <li><a href = "magnolia.html">Your first song</a></li>
+              </ul>
+            </div>
+
+            <a href="javascript:void(0);" class="icon"><i class="fa fa-bars"></i>
+
+        </nav>
+    </header>
+
+    <main id = "main" tabindex = "-1"><!-- retrieved from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ -->
+
+<!-- images to use here: closeup.jpg, yazbegi.jpg, allison.jpg, gocha.jpg, guria.jpg, guriahome.jpg, kistauri.jpg, muqueti.jpg, school.jpg, school2.jpg, telavi.jpg -->
+      <div class = "maintext">
+        <h1>About</h1>
+        <p>Hi, I'm Eugene!</p>
+        <p>I wrote a guide to playing panduri back when I was a Peace Corps volunteer in the beautiful country of Georgia. I had wanted to learn how to play panduri, but I was unable to find many resources online, and so after I had a chance to learn from some amazing teachers all over Georgia, I decided to make my own resources for people to be able to learn from.</p>
+        <p>When I wrote the guide, my intended audience was other Peace Corps volunteers in Georgia who wanted to learn how to play panduri. However, when I started making videos, I realized that there was a lot of interest from people who weren't involved in Peace Corps.</p>
+        <p>I decided to make my guide more accessible by putting it in website form. I will also include the original PDF link here.</p>
+        <p>My intention for this website is to reach more people who want to learn how to play panduri. I also hope this website becomes a community for panduri players to discuss panduri-related issues and share tips for learning how to play.</p>
+        <p>I wrote the words below back when I first wrote the guide, but they are still true, so I will keep them as is: </p>
+        <p>I decided to write this guide because I love music and want more people to know about Georgian traditional music. I was interested in music prior to my Peace Corps service, so when I found out about the rich musical culture in this country, I jumped on the opportunity to learn as much as I could and, in turn, to teach as many people as I could. I hope this guide makes it easier for you to learn how to play the beautiful music of this amazing country.</p>
+        <p>I'm not a music theory expert, so some information may not be academically correct, but I hope it will be helpful regardless.</p>
+        <p>I am also not an expert in Georgian folk music. All of this information I have learned or assumed from personal experience.</p>
+        <p>---</p>
+        <p>Thank you for stopping by!</p>
+
+        <button id="button">Popup Modal</button>
+        <div id="modal" class="modal">
+          <div class="modalStuff">
+            <span class="close">&times;</span>
+            <p>Click the X to close.</p>
+          </div>
+        </div>
+      </div>
+
+  <!-- <img src="images/yazbegi.jpg" class="frontimages" alt = "yazbegi mountains"/> -->
+      <div class = "frontimages">
+        <img src="images/allison.jpg" alt = "georgians playing panduri in home"/>
+        <img src="images/gocha.jpg" alt = "my panduri teacher gocha"/>
+        <img src="images/guria.jpg" alt = "students in guria playing panduri"/>
+        <img src="images/guriahome.jpg" alt = "panduri at home"/>
+        <img src="images/kistauri.jpg" alt = "students in kistauri playing panduri"/>
+        <img src="images/muqueti.jpg" alt = "muqueti folk music group"/>
+        <img src="images/school2.jpg"  alt = "panduri lesson"/>
+        <img src="images/telavi.jpg" alt = "panduri at school"/>
+
+        <p>---</p>
+        <p>Check out my silly Game of Thrones video performed on panduri!</p>
+        <button onclick="bigger()">Bigger</button>
+        <button onclick="smaller()">Smaller</button>
+        <button onclick="reset()">Reset</button>
+        <video id="video" width="420" controls>
+           <source src="images/pandurigot.mp4" type="video/mp4">
+           Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+
+
+    </main>
+
+    <footer>
+      <p>Website content 2019 by Eugene Yoon</p>
+    </footer>
+
+    <script type="text/javascript" src="js/funstuff.js"></script>
+  </body>
+</html>
