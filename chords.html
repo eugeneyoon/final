@@ -10,28 +10,70 @@
     <title>Introduction to Chords</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138748105-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-138748105-1');
+    </script>
+
   </head>
 
   <body>
     <header>
-      <a class="skip" href="#main">Skip to main content</a><!-- retrieved from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ -->
-        <!-- <img src="images/closeup.jpg" class="banner" alt = "closeup of panduri"/> -->
+      <a class="skip" href="#main">Skip to main content</a>
       <a class="banner" href="index.html">Learn Panduri</a>
 
-        <nav>
-            <a href = "index.html">About</a>
-            <a href = "which.html">Which panduri</a>
-            <a href = "where.html">Getting a panduri</a>
-            <a href = "hold.html">How to hold</a>
-            <a href = "tune.html">How to tune</a>
-            <a href = "strum.html">How to strum</a>
-            <a href = "chords.html" class = current>Introduction to chords</a>
-            <a href = "magnolia.html">Your first song</a>
-            <a href = "https://www.youtube.com/channel/UCxTann6rEOXPyrlaB7WZ4PA" target="_blank" aria-label="YouTube channel"><i class="fab fa-youtube"></i></a>
-        </nav>
+      <nav id="nav">
+          <a href = "index.html">About</a>
+
+          <div class="dropdownContainer1">
+            <a href="#" id="drop">I want a panduri</a>
+            <div id="dropdownStuff1">
+              <a href = "which.html">Which panduri</a>
+              <a href = "where.html">Getting a panduri</a>
+            </div>
+          </div>
+
+          <div class="dropdownContainer2">
+            <a href="#" id="drop">How to</a>
+            <div id="dropdownStuff2">
+              <a href = "hold.html">How to hold</a>
+              <a href = "tune.html">How to tune</a>
+              <a href = "strum.html">How to strum</a>
+            </div>
+          </div>
+
+          <div class="dropdownContainer3">
+            <a href="#" id="drop" class = current>Chords</a>
+            <div id="dropdownStuff3">
+              <a href = "chords.html" class = current>Introduction to chords</a>
+              <a href = "magnolia.html">Your first song</a>
+            </div>
+          </div>
+
+          <a href = "https://www.youtube.com/channel/UCxTann6rEOXPyrlaB7WZ4PA" target="_blank" aria-label="YouTube channel"><i class="fab fa-youtube"></i></a>
+
+          <div class="listContainer">
+            <input type="text" id="input" onkeyup="filtering()" placeholder="Search for a page!">
+            <ul id="list">
+              <li><a href = "index.html" class = current>About</a></li>
+              <li><a href = "which.html">Which panduri</a></li>
+              <li><a href = "where.html">Getting a panduri</a></li>
+              <li><a href = "hold.html">How to hold</a></li>
+              <li><a href = "tune.html">How to tune</a></li>
+              <li><a href = "strum.html">How to strum</a></li>
+              <li><a href = "chords.html">Introduction to chords</a></li>
+              <li><a href = "magnolia.html">Your first song</a></li>
+            </ul>
+          </div>
+      </nav>
     </header>
 
-    <main id = "main" tabindex = "-1"><!-- retrieved from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ -->
+    <main id = "main" tabindex = "-1">
 <!-- images to use here: closeup.jpg, bminor.jpg, eminor.jpg, amajor.jpg -->
       <div class = "maintext">
         <h1>Introduction to Chords</h1>
@@ -44,25 +86,37 @@
         <p>Finally, let's learn one more chord, A Major, and then we'll be able to play many Georgian songs.</p>
         <p>This is just an open chord; you don't need to press down on anything!</p>
         <p>So, with these three chords (b minor, e minor, and A Major) you can play a song that will already be familiar to most of you, "Magnolia,” which I have for you on the next page.</p>
+
+        <p>---</p>
+        <p>Check out this video on this introduction to chords!</p>
+        <p>
+          <button onclick="bigger()">Bigger</button>
+          <button onclick="smaller()">Smaller</button>
+          <button onclick="reset()">Reset</button>
+        </p>
+        <video id="video" width="420" controls>
+           <source src="images/chords.mp4" type="video/mp4">
+           Your browser does not support HTML5 video.
+        </video>
+
       </div>
 
       <div class = "magnoliaimages">
+        <button id="button" onclick="openModal()">Click here for panduri chord charts in PDF format.</button>
+        <div id="modal" class="modal">
+          <div class="modalStuff">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <embed src="docs/pandurichordcharts.pdf" width="600px" height="900px">
+          </div>
+        </div>
+
         <img src="images/bminor.png" alt = "b minor"/>
         <img src="images/eminor.png" alt = "e minor"/>
         <img src="images/amajor.png" alt = "a major"/>
       </div>
 
-    <!-- i'm getting accessibility errors here so i'm commentng the videos out
-    <p>Check out a video on this introduction to chords!</p><br>
-    <iframe title = "Introduction to chords" width="560" height="315" src="https://www.youtube.com/embed/QkEWb9pu6sc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-
-
     </main>
-
-    <footer>
-      <p>Website content 2019 by Eugene Yoon</p>
-    </footer>
-
+    <footer><p>Website content 2019 by Eugene Yoon</p></footer>
+    <script type="text/javascript" src="js/funstuff.js"></script>
   </body>
-
 </html>

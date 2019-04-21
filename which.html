@@ -10,26 +10,67 @@
     <title>Which panduri</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  </head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138748105-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'UA-138748105-1');
+    </script>
+
+  </head>
 
   <body>
     <header>
-      <a class="skip" href="#main">Skip to main content</a><!-- retrieved from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ -->
-        <!-- <img src="images/closeup.jpg" class="banner" alt = "closeup of panduri"/> -->
+      <a class="skip" href="#main">Skip to main content</a>
       <a class="banner" href="index.html">Learn Panduri</a>
 
-        <nav>
-            <a href = "index.html">About</a>
-            <a href = "which.html" class = current>Which panduri</a>
-            <a href = "where.html">Getting a panduri</a>
-            <a href = "hold.html">How to hold</a>
-            <a href = "tune.html">How to tune</a>
-            <a href = "strum.html">How to strum</a>
-            <a href = "chords.html">Introduction to chords</a>
-            <a href = "magnolia.html">Your first song</a>
-            <a href = "https://www.youtube.com/channel/UCxTann6rEOXPyrlaB7WZ4PA" target="_blank" aria-label="YouTube channel"><i class="fab fa-youtube"></i></a>
-        </nav>
+      <nav id="nav">
+          <a href = "index.html">About</a>
+
+          <div class="dropdownContainer1">
+            <a href="#" id="drop" class = current>I want a panduri</a>
+            <div id="dropdownStuff1">
+              <a href = "which.html" class = current>Which panduri</a>
+              <a href = "where.html">Getting a panduri</a>
+            </div>
+          </div>
+
+          <div class="dropdownContainer2">
+            <a href="#" id="drop">How to</a>
+            <div id="dropdownStuff2">
+              <a href = "hold.html">How to hold</a>
+              <a href = "tune.html">How to tune</a>
+              <a href = "strum.html">How to strum</a>
+            </div>
+          </div>
+
+          <div class="dropdownContainer3">
+            <a href="#" id="drop">Chords</a>
+            <div id="dropdownStuff3">
+              <a href = "chords.html">Introduction to chords</a>
+              <a href = "magnolia.html">Your first song</a>
+            </div>
+          </div>
+
+          <a href = "https://www.youtube.com/channel/UCxTann6rEOXPyrlaB7WZ4PA" target="_blank" aria-label="YouTube channel"><i class="fab fa-youtube"></i></a>
+
+          <div class="listContainer">
+            <input type="text" id="input" onkeyup="filtering()" placeholder="Search for a page!">
+            <ul id="list">
+              <li><a href = "index.html" class = current>About</a></li>
+              <li><a href = "which.html">Which panduri</a></li>
+              <li><a href = "where.html">Getting a panduri</a></li>
+              <li><a href = "hold.html">How to hold</a></li>
+              <li><a href = "tune.html">How to tune</a></li>
+              <li><a href = "strum.html">How to strum</a></li>
+              <li><a href = "chords.html">Introduction to chords</a></li>
+              <li><a href = "magnolia.html">Your first song</a></li>
+            </ul>
+          </div>
+      </nav>
     </header>
 
     <main id = "whichpage" tabindex = "-1"><!-- retrieved from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ -->
@@ -46,9 +87,7 @@
 
     </main>
 
-    <footer>
-      <p>Website content 2019 by Eugene Yoon</p>
-    </footer>
-
+    <footer><p>Website content 2019 by Eugene Yoon</p></footer>
+    <script type="text/javascript" src="js/funstuff.js"></script>
   </body>
 </html>

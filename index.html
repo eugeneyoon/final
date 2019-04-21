@@ -10,13 +10,21 @@
     <title>Learn Panduri</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <!-- <script type="text/javascript" src="js/funstuff.js"></script> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138748105-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-138748105-1');
+    </script>
+
   </head>
 
-  <body class = "bgimage" aria-label="Photo by Aiony Haust on Unsplash, mountains in georgia">
-
+  <body>
     <header>
-      <a class="skip" href="#main">Skip to main content</a><!-- retrieved from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ -->
+      <a class="skip" href="#main">Skip to main content</a>
       <a class="banner" href="index.html">Learn Panduri</a>
 
         <nav id="nav">
@@ -62,14 +70,10 @@
                 <li><a href = "magnolia.html">Your first song</a></li>
               </ul>
             </div>
-
-            <a href="javascript:void(0);" class="icon"><i class="fa fa-bars"></i>
-
         </nav>
     </header>
 
-    <main id = "main" tabindex = "-1"><!-- retrieved from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ -->
-
+    <main id = "main" tabindex = "-1">
 <!-- images to use here: closeup.jpg, yazbegi.jpg, allison.jpg, gocha.jpg, guria.jpg, guriahome.jpg, kistauri.jpg, muqueti.jpg, school.jpg, school2.jpg, telavi.jpg -->
       <div class = "maintext">
         <h1>About</h1>
@@ -84,46 +88,97 @@
         <p>I am also not an expert in Georgian folk music. All of this information I have learned or assumed from personal experience.</p>
         <p>---</p>
         <p>Thank you for stopping by!</p>
-
-        <button id="button">Popup Modal</button>
-        <div id="modal" class="modal">
-          <div class="modalStuff">
-            <span class="close">&times;</span>
-            <p>Click the X to close.</p>
-          </div>
-        </div>
-      </div>
-
-  <!-- <img src="images/yazbegi.jpg" class="frontimages" alt = "yazbegi mountains"/> -->
-      <div class = "frontimages">
-        <img src="images/allison.jpg" alt = "georgians playing panduri in home"/>
-        <img src="images/gocha.jpg" alt = "my panduri teacher gocha"/>
-        <img src="images/guria.jpg" alt = "students in guria playing panduri"/>
-        <img src="images/guriahome.jpg" alt = "panduri at home"/>
-        <img src="images/kistauri.jpg" alt = "students in kistauri playing panduri"/>
-        <img src="images/muqueti.jpg" alt = "muqueti folk music group"/>
-        <img src="images/school2.jpg"  alt = "panduri lesson"/>
-        <img src="images/telavi.jpg" alt = "panduri at school"/>
-
-        <p>---</p>
-        <p>Check out my silly Game of Thrones video performed on panduri!</p>
-        <button onclick="bigger()">Bigger</button>
-        <button onclick="smaller()">Smaller</button>
-        <button onclick="reset()">Reset</button>
+        <p>Check out my cover of the Game of Thrones theme on panduri!</p>
+        <p>
+          <button onclick="bigger()">Bigger</button>
+          <button onclick="smaller()">Smaller</button>
+          <button onclick="reset()">Reset</button>
+        </p>
         <video id="video" width="420" controls>
            <source src="images/pandurigot.mp4" type="video/mp4">
            Your browser does not support HTML5 video.
         </video>
       </div>
 
+  <!-- <img src="images/yazbegi.jpg" class="frontimages" alt = "yazbegi mountains"/> -->
+      <div class = "frontimages">
 
+        <img onclick="openLight(1)" class="lightPic" src="images/allison.jpg" alt = "georgians playing panduri in home"/>
+          <div id="modal1" class="modal">
+            <div class="modalStuff">
+              <span class="close" onclick="closeLight(1)">&times;</span>
+              <img id="lightPic" src="images/allison.jpg" alt = "georgians playing panduri in home"/>
+              <p>Practicing panduri at home.</p>
+            </div>
+          </div>
+
+        <img onclick="openLight(2)" class="lightPic" src="images/gocha.jpg" alt = "my panduri teacher gocha"/>
+          <div id="modal2" class="modal">
+            <div class="modalStuff">
+              <span class="close" onclick="closeLight(2)">&times;</span>
+              <img id="lightPic" src="images/gocha.jpg" alt = "my panduri teacher gocha"/>
+              <p>My panduri teacher Gocha and his traditional Georgian folk ensemble.</p>
+            </div>
+          </div>
+
+        <img onclick="openLight(3)" class="lightPic" src="images/guria.jpg" alt = "students in guria playing panduri"/>
+          <div id="modal3" class="modal">
+            <div class="modalStuff">
+              <span class="close" onclick="closeLight(3)">&times;</span>
+              <img id="lightPic" src="images/guria.jpg" alt = "students in guria playing panduri"/>
+              <p>Students in Guria performing for the school.</p>
+            </div>
+          </div>
+
+        <img onclick="openLight(4)" class="lightPic" src="images/guriahome.jpg" alt = "panduri at home"/>
+          <div id="modal4" class="modal">
+            <div class="modalStuff">
+              <span class="close" onclick="closeLight(4)">&times;</span>
+              <img id="lightPic" src="images/guriahome.jpg" alt = "panduri at home"/>
+              <p>Playing panduri at the dinner table.</p>
+            </div>
+          </div>
+
+        <img onclick="openLight(5)" class="lightPic" src="images/kistauri.jpg" alt = "students in kistauri playing panduri"/>
+          <div id="modal5" class="modal">
+            <div class="modalStuff">
+              <span class="close" onclick="closeLight(5)">&times;</span>
+              <img id="lightPic" src="images/kistauri.jpg" alt = "students in kistauri playing panduri"/>
+              <p>Singing with guitar and panduri with my students.</p>
+            </div>
+          </div>
+
+        <img onclick="openLight(6)" class="lightPic" src="images/muqueti.jpg" alt = "muqueti folk music group"/>
+          <div id="modal6" class="modal">
+            <div class="modalStuff">
+              <span class="close" onclick="closeLight(6)">&times;</span>
+              <img id="lightPic" src="images/muqueti.jpg" alt = "muqueti folk music group"/>
+              <p>Kistauri's folk music group Muqueti.</p>
+            </div>
+          </div>
+
+        <img onclick="openLight(7)" class="lightPic" src="images/school2.jpg" alt = "panduri lesson"/>
+          <div id="modal7" class="modal">
+            <div class="modalStuff">
+              <span class="close" onclick="closeLight(7)">&times;</span>
+              <img id="lightPic" src="images/school2.jpg"  alt = "panduri lesson"/>
+              <p>A panduri lesson in Kistauri.</p>
+            </div>
+          </div>
+
+        <img onclick="openLight(8)" class="lightPic" src="images/telavi.jpg" alt = "panduri at school"/>
+          <div id="modal8" class="modal">
+            <div class="modalStuff">
+              <span class="close" onclick="closeLight(8)">&times;</span>
+              <img id="lightPic" src="images/telavi.jpg" alt = "panduri at school"/>
+              <p>Students in Telavi playing panduri.</p>
+            </div>
+          </div>
+
+      </div>
 
     </main>
-
-    <footer>
-      <p>Website content 2019 by Eugene Yoon</p>
-    </footer>
-
+    <footer><p>Website content 2019 by Eugene Yoon</p></footer>
     <script type="text/javascript" src="js/funstuff.js"></script>
   </body>
 </html>

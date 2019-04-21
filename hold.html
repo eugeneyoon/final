@@ -10,38 +10,75 @@
     <title>How to hold</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  </head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138748105-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'UA-138748105-1');
+    </script>
+
+  </head>
 
   <body>
     <header>
-      <a class="skip" href="#main">Skip to main content</a><!-- retrieved from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ -->
-        <!-- <img src="images/closeup.jpg" class="banner" alt = "closeup of panduri"/> -->
+      <a class="skip" href="#main">Skip to main content</a>
       <a class="banner" href="index.html">Learn Panduri</a>
 
-        <nav>
-            <a href = "index.html">About</a>
-            <a href = "which.html">Which panduri</a>
-            <a href = "where.html">Getting a panduri</a>
-            <a href = "hold.html" class = current>How to hold</a>
-            <a href = "tune.html">How to tune</a>
-            <a href = "strum.html">How to strum</a>
-            <a href = "chords.html">Introduction to chords</a>
-            <a href = "magnolia.html">Your first song</a>
-            <a href = "https://www.youtube.com/channel/UCxTann6rEOXPyrlaB7WZ4PA" target="_blank" aria-label="YouTube channel"><i class="fab fa-youtube"></i></a>
-        </nav>
+      <nav id="nav">
+          <a href = "index.html">About</a>
+
+          <div class="dropdownContainer1">
+            <a href="#" id="drop">I want a panduri</a>
+            <div id="dropdownStuff1">
+              <a href = "which.html">Which panduri</a>
+              <a href = "where.html">Getting a panduri</a>
+            </div>
+          </div>
+
+          <div class="dropdownContainer2">
+            <a href="#" id="drop" class = current>How to</a>
+            <div id="dropdownStuff2">
+              <a href = "hold.html" class = current>How to hold</a>
+              <a href = "tune.html">How to tune</a>
+              <a href = "strum.html">How to strum</a>
+            </div>
+          </div>
+
+          <div class="dropdownContainer3">
+            <a href="#" id="drop">Chords</a>
+            <div id="dropdownStuff3">
+              <a href = "chords.html">Introduction to chords</a>
+              <a href = "magnolia.html">Your first song</a>
+            </div>
+          </div>
+
+          <a href = "https://www.youtube.com/channel/UCxTann6rEOXPyrlaB7WZ4PA" target="_blank" aria-label="YouTube channel"><i class="fab fa-youtube"></i></a>
+
+          <div class="listContainer">
+            <input type="text" id="input" onkeyup="filtering()" placeholder="Search for a page!">
+            <ul id="list">
+              <li><a href = "index.html" class = current>About</a></li>
+              <li><a href = "which.html">Which panduri</a></li>
+              <li><a href = "where.html">Getting a panduri</a></li>
+              <li><a href = "hold.html">How to hold</a></li>
+              <li><a href = "tune.html">How to tune</a></li>
+              <li><a href = "strum.html">How to strum</a></li>
+              <li><a href = "chords.html">Introduction to chords</a></li>
+              <li><a href = "magnolia.html">Your first song</a></li>
+            </ul>
+          </div>
+      </nav>
     </header>
 
-    <main id = "main" tabindex = "-1"><!-- retrieved from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ -->
-<!-- images to use here: closeup.jpg, holding.jpg -->
+    <main id = "main" tabindex = "-1">
       <div class = "maintext">
         <h1>How to hold</h1>
         <p>How to hold</p>
         <p>If you are right-handed, the picture below shows how to hold your panduri. You should press the strings down with your left hand and strum with your right hand. If you have played other string instruments before, you'll notice that the grip is a little bit different on the panduri, as the left hand thumb is used extensively on the top string. Remember to press down on the strings firmly so that the strings resonate. Also, press the strings as close to the fret as you can so they don't rattle.</p>
         <p>Your right arm should rest on the body of the panduri, and you should use wrist movements to strum the strings. The point of articulation, or where you strum, is where the body narrows into the neck, and not directly above the hole(s).</p>
-        <!-- i'm getting accessibility errors here so i'm commentng the videos out
-        <p>Check out this video on how to hold your panduri!</p><br>
-        <iframe title="How to hold" width="560" height="315" src="https://www.youtube.com/embed/Ifzx0h9Kv_s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br> -->
         <p>If you are left-handed, you have three options:</p>
         <ol>
           <li>Learn how to play right-handed.</li>
@@ -49,14 +86,24 @@
           <li>Flip the panduri over and restring the panduri so the strings are reversed, so that the fingerings are mirrored.</li>
         </ol>
         <p>I'm writing this guide assuming you are playing right-handed, so if you have chosen to flip your panduri, just remember to use your left hand whenever I say “right hand” and vice versa.</p>
+
+        <p>---</p>
+        <p>Check out this video on how to hold your panduri!</p>
+        <p>
+          <button onclick="bigger()">Bigger</button>
+          <button onclick="smaller()">Smaller</button>
+          <button onclick="reset()">Reset</button>
+        </p>
+        <video id="video" width="420" controls>
+           <source src="images/hold.mp4" type="video/mp4">
+           Your browser does not support HTML5 video.
+        </video>
       </div>
         <img src="images/holding.png" class="hold" alt = "how to hold panduri"/>
 
     </main>
 
-    <footer>
-      <p>Website content 2019 by Eugene Yoon</p>
-    </footer>
-
+    <footer><p>Website content 2019 by Eugene Yoon</p></footer>
+    <script type="text/javascript" src="js/funstuff.js"></script>
   </body>
 </html>

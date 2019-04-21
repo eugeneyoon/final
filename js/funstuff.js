@@ -1,24 +1,11 @@
-// video. 15 pts.
+// video
 var video = document.getElementById("video");
 function bigger() {video.width += 50;}
 function smaller() {video.width -= 50;}
 function reset() {video.width = 420;}
 
 
-//dropdown and responsive menu. 20 pts.
-
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
-
-//sticky. 10 pts.
+//sticky
 window.onscroll = function(){stick()};
 var navPosition = document.getElementById("nav").offsetTop;
 function stick() {
@@ -44,7 +31,7 @@ function stick() {
 }
 
 
-//filtering search. 20pts.
+//filtering search
 function filtering(){
   document.getElementById("list").style.display = "block";
   var input, filter, ul, li, a, i, txtValue;
@@ -63,11 +50,12 @@ function filtering(){
       }
     }
 }
-window.onclick = function(thing){document.getElementById("list").style.display = "none";}
+window.onclick = function(){document.getElementById("list").style.display = "none";}
 
-//modal. 15 pts.
-document.getElementById("button").onclick = function(){document.getElementById("modal").style.display = "block";}
-document.getElementsByClassName("close")[0].onclick = function(){document.getElementById("modal").style.display = "none";}
+//modal
+function openModal(){document.getElementById("modal").style.display = "block";}
+function closeModal(){document.getElementById("modal").style.display = "none";}
 
-// hamburger. 15 pts.
-document.getElementsByClassName("icon")[0].onclick = function(){document.getElementById("list").style.display = "block";}
+// lightbox with caption
+function openLight(x){document.getElementById("modal" + x).style.display = "block";}
+function closeLight(x){document.getElementById("modal" + x).style.display = "none";}

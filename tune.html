@@ -10,29 +10,71 @@
     <title>How to tune</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138748105-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-138748105-1');
+    </script>
+
   </head>
 
 
   <body>
     <header>
-      <a class="skip" href="#main">Skip to main content</a><!-- retrieved from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ -->
-        <!-- <img src="images/closeup.jpg" class="banner" alt = "closeup of panduri"/> -->
+      <a class="skip" href="#main">Skip to main content</a>
       <a class="banner" href="index.html">Learn Panduri</a>
 
-        <nav>
-            <a href = "index.html">About</a>
-            <a href = "which.html">Which panduri</a>
-            <a href = "where.html">Getting a panduri</a>
-            <a href = "hold.html">How to hold</a>
-            <a href = "tune.html" class = current>How to tune</a>
-            <a href = "strum.html">How to strum</a>
-            <a href = "chords.html">Introduction to chords</a>
-            <a href = "magnolia.html">Your first song</a>
-            <a href = "https://www.youtube.com/channel/UCxTann6rEOXPyrlaB7WZ4PA" target="_blank" aria-label="YouTube channel"><i class="fab fa-youtube"></i></a>
-        </nav>
+      <nav id="nav">
+          <a href = "index.html">About</a>
+
+          <div class="dropdownContainer1">
+            <a href="#" id="drop">I want a panduri</a>
+            <div id="dropdownStuff1">
+              <a href = "which.html">Which panduri</a>
+              <a href = "where.html">Getting a panduri</a>
+            </div>
+          </div>
+
+          <div class="dropdownContainer2">
+            <a href="#" id="drop" class = current>How to</a>
+            <div id="dropdownStuff2">
+              <a href = "hold.html">How to hold</a>
+              <a href = "tune.html" class = current>How to tune</a>
+              <a href = "strum.html">How to strum</a>
+            </div>
+          </div>
+
+          <div class="dropdownContainer3">
+            <a href="#" id="drop">Chords</a>
+            <div id="dropdownStuff3">
+              <a href = "chords.html">Introduction to chords</a>
+              <a href = "magnolia.html">Your first song</a>
+            </div>
+          </div>
+
+          <a href = "https://www.youtube.com/channel/UCxTann6rEOXPyrlaB7WZ4PA" target="_blank" aria-label="YouTube channel"><i class="fab fa-youtube"></i></a>
+
+          <div class="listContainer">
+            <input type="text" id="input" onkeyup="filtering()" placeholder="Search for a page!">
+            <ul id="list">
+              <li><a href = "index.html" class = current>About</a></li>
+              <li><a href = "which.html">Which panduri</a></li>
+              <li><a href = "where.html">Getting a panduri</a></li>
+              <li><a href = "hold.html">How to hold</a></li>
+              <li><a href = "tune.html">How to tune</a></li>
+              <li><a href = "strum.html">How to strum</a></li>
+              <li><a href = "chords.html">Introduction to chords</a></li>
+              <li><a href = "magnolia.html">Your first song</a></li>
+            </ul>
+          </div>
+      </nav>
     </header>
 
-    <main id = "tunepage" tabindex = "-1"><!-- retrieved from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ -->
+    <main id = "tunepage" tabindex = "-1">
       <div class = "maintext">
         <h1>How to tune</h1>
         <p>To tune your panduri, you need to turn the pegs at the top. Because of the way the pegs stick out the sides, the strings are arranged in an unintuitive way: the highest peg is attached to the middle string, the lone peg on the right side is attached to the string on the left, and the lowest peg is attached to the string on the right. If your panduri has metal pegs, it may still be strung this way, probably just due to people being used to the strings being arranged like this.</p>
@@ -43,7 +85,17 @@
         <p>If you don't have access to a tuner, you can also tune the panduri to itself. I'm going to show you how to do this with chord charts. The chord charts below are images of your panduri if you are looking at it standing up. The leftmost line in the picture is the leftmost and lowest-sounding string, the middle line the middle string, and the right line is the right highest-sounding string. The horizontal lines are the frets, with the first thick line being the nut at the top. The dots show you where to press the frets. If there is no dot and is instead a circle at the top, that means that string is to be played open. An x at the top means don't play that string. And finally, the notes at the top show what notes the strings are tuned to, and the notes at the bottom show what the notes are sounded when you press down on that particular fret.</p>
         <p>When you play on the fourth fret of the lowest string, it should sound the same as the middle string.</p>
         <p>When your middle string sounds the same as when you press on the fourth fret of the lowest string, play the third fret on your middle string. This should the same as the highest string.</p>
-
+        <p>---</p>
+        <p>Check out this video for more information on how to tune!</p>
+        <p>
+          <button onclick="bigger()">Bigger</button>
+          <button onclick="smaller()">Smaller</button>
+          <button onclick="reset()">Reset</button>
+        </p>
+        <video id="video" width="420" controls>
+           <source src="images/tune.mp4" type="video/mp4">
+           Your browser does not support HTML5 video.
+        </video>
       </div>
 
       <div class = "tunediagrams">
@@ -51,16 +103,9 @@
         <img src="images/tune1.png" class="diagrams" alt = "tuning 1"/>
         <img src="images/tune2.png" class="diagrams" alt = "tuning 2"/>
       </div>
-
-    <!-- i'm getting accessibility errors here so i'm commentng the videos out
-    <p>That's it! Check out this video for more information on how to tune!</p><br>
-    <iframe title="How to tune" width="560" height="315" src="https://www.youtube.com/embed/N-FWp6F6G2A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-
     </main>
 
-    <footer>
-      <p>Website content 2019 by Eugene Yoon</p>
-    </footer>
-
+    <footer><p>Website content 2019 by Eugene Yoon</p></footer>
+    <script type="text/javascript" src="js/funstuff.js"></script>
   </body>
 </html>
