@@ -205,8 +205,8 @@ main{
   padding: 12px 0px;
 }
 
-#lightPic{
-  width: 100%;
+.lightPic{
+  width: 100% !important;
 }
 
 .frontimages{
